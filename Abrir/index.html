@@ -1,33 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botones Sí y No con imagen cambiante</title>
-    <link rel="stylesheet" href="ju.css">
-</head>
-<body>
-    <div class="container">
-        <h1>¿Will you be my Valentine?</h1>
-        <p>
-            
-            Debe decir "Sí" a todas las peticiones que se le hagan durante la actividad.
-            Cabe resaltar que debe expresar "Te quiero" al menos 1000 veces durante la actividad(Eso quiere decir que tiene que invitarme).
-            Es importante que muestre entusiasmo y compromiso en todo lo que haga.
-            Se espera que siga las instrucciones detalladamente y sin objeciones.
-            implica aceptación de realizar cualquier cosa dentro de los límites razonables y respetuosos.
-            Por favor, si no está de acuerdo absténgase de participar en la actividad y diga "NO".</p>
-        <h2> Debe darme muchos kisses me entiende</h2>
-        <div class="image-container">
-            <img src="https://i.pinimg.com/236x/da/b7/0c/dab70cc883a5c77b3a755307d17a45b3.jpg" id="imagen" alt="Imagen">
-        </div>
-        <div class="button-container">
-            <button id="si-btn">Sí</button>
-            <button id="no-btn">No</button>
-        </div>
-    </div>
+    <title>Inteligencia Artificial Generativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-    <script src="nkj.js"></script>
+        .dark {
+            color-scheme: dark;
+        }
+
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(-25%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(0);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen transition-colors duration-300">
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a class="font-bold text-xl text-blue-600" href="#">IA Generativa</a>
+            <div class="flex items-center">
+                <button id="darkModeToggle" class="mr-4 p-2 rounded-full" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+                <button class="mx-2 text-gray-800 hover:text-blue-600">Definición</button>
+                <button class="mx-2 text-gray-800 hover:text-blue-600">Usos</button>
+                <button class="mx-2 text-gray-800 hover:text-blue-600">Futuro</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container mx-auto px-6 py-16 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">
+            Explorando la Inteligencia Artificial Generativa
+        </h1>
+        <p class="text-xl text-gray-600">
+            Descubre el poder de la IA en la creación de contenido
+        </p>
+        <button class="mt-8 bg-blue-600 text-white px-6 py-2 rounded-full animate-bounce transition-transform transform hover:scale-105">
+            Comienza tu viaje
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section class="mb-12" id="definicion">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">¿Qué es la IA Generativa?</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-600">
+                    La Inteligencia Artificial Generativa se refiere a sistemas de IA capaces de crear contenido nuevo, 
+                    incluyendo texto, imágenes, música y más. Estos sistemas aprenden patrones de datos existentes 
+                    y utilizan ese conocimiento para generar resultados novedosos y creativos.
+                </p>
+                <img src="https://img-cdn.pixlr.com/image-generator/history/672295cda42fc348b6ad00f0/8f0161f5-ef55-41e3-88fe-5d943bbfbb47/preview.webp" alt="Representación de IA Generativa" class="mt-4 rounded-lg w-full object-cover" loading="lazy">
+            </div>
+        </section>
+
+        <section class="mb-12" id="usos">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Usos Cotidianos de la IA Generativa</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        Creación de Contenido
+                    </h3>
+                    <p class="text-gray-600">
+                        Generación de textos, imágenes y videos para marketing y redes sociales.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        Asistencia Creativa
+                    </h3>
+                    <p class="text-gray-600">
+                        Inspiración para arte, diseño y resolución de problemas creativos.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-semibold mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        Desarrollo de Software
+                    </h3>
+                    <p class="text-gray-600">
+                        Optimización del proceso de codificación y generación de código.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12" id="galeria">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Galería de Imágenes</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/a538a262-92d1-4333-b0bc-dd3923105583/DallEGeneratedImages/dalle-83fa1a65-5469-4e3f-a3f6-0f9bbd30ec240251671982289535211500.jpg&dcHint=BrazilSouth&fileToken=ced365ee-6a30-4ba0-a24b-8b15c520d555" alt="Descripción de la imagen 1" class="rounded-lg w-full object-cover" loading="lazy">
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/a538a262-92d1-4333-b0bc-dd3923105583/DallEGeneratedImages/dalle-5736af20-f0e5-4548-a623-1e7f67d8b8ed0251671982206661395800.jpg&dcHint=BrazilSouth&fileToken=ced365ee-6a30-4ba0-a24b-8b15c520d555" alt="Descripción de la imagen 2" class="rounded-lg w-full object-cover" loading="lazy">
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="https://designerapp.officeapps.live.com/designerapp/document.ashx?path=/a538a262-92d1-4333-b0bc-dd3923105583/DallEGeneratedImages/dalle-443c2bdd-85a9-4060-b2e3-90830a8bfdb00251671981971742023700.jpg&dcHint=BrazilSouth&fileToken=ced365ee-6a30-4ba0-a24b-8b15c520d555" alt="Descripción de la imagen 3" class="rounded-lg w-full object-cover" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="futuro">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">El Futuro de la IA Generativa</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-600">
+                    A medida que la tecnología avanza, la IA generativa seguirá evolucionando, abriendo nuevas oportunidades en áreas como la educación, la salud y la sostenibilidad. Se espera que los sistemas sean aún más personalizados y capaces de aprender de las interacciones humanas para ofrecer resultados más relevantes y útiles.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white shadow-md mt-12">
+        <div class="container mx-auto px-6 py-3 text-center">
+            <p class="text-gray-600">
+                &copy; 2024 IA Generativa. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
 </body>
 </html>
-
